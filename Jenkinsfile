@@ -1,6 +1,6 @@
 pipeline {
     agent { docker { 
-        label 'windows'
+        label 'java'
         image 'maven:3.9.11-eclipse-temurin-21-alpine' 
         } }
     stages {
