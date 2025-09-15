@@ -1,12 +1,9 @@
 pipeline {
-    agent { docker { 
-        label 'java'
-        image 'maven:3.9.11-eclipse-temurin-21-alpine' 
-        } }
+    agent {  label 'java'     }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                bat 'mvn --version'
             }
         }
     }
