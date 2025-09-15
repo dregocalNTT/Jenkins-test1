@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Run JAR') {
             steps {
-                bat 'java -jar target/demo-1.0-SNAPSHOT.jar TEXT'
+                bat 'java -jar target/demo-1.0-SNAPSHOT.jar %TEXT%'
             }
         }
     }
