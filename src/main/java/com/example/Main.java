@@ -7,6 +7,7 @@ public class Main {
         if (args.length > 0) {
             System.out.println("Arguments passed:");
             for (String arg : args) {
+                System.out.println(arg.length());
                 System.out.println(arg);
             }
         } else {
