@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { 
         label 'windows'
-        image 'maven:3.9.11-eclipse-temurin-21-alpine' 
+        image 'mcr.microsoft.com/powershell'
         } }
     stages {
         stage('build') {
