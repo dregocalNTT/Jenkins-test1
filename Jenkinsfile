@@ -10,5 +10,10 @@ pipeline {
                 bat 'mvn -B -DskipTests clean package -DmySecret="${TEXT}"'
             }
         }
+        stage('Run JAR') {
+            steps {
+                bat 'java -jar target/demo-1.0-SNAPSHOT.jar'
+            }
+        }
     }
 }
