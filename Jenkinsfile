@@ -21,12 +21,23 @@ pipeline {
                 helloWorldExternal(name: "Dani", dayOfWeek: "Monday")
             }
         }
-        stage('Send Notification'){
-            steps{
-                emailext(body: 'Test Message',
-                subject: 'Test Subject',
-                to: 'test@example.com')
+    }
+    post {
+            success {
+                emailext(
+                    to: 'danregcal@gmail.com',
+                    subject: "✅ Build Successful}",
+                    body: "The build was successful!}"
+                )
+            }
+            failure {
+                emailext(
+                    to: 'danregcal@gmail.com',
+                    subject: "❌ Build Failed",
+                    body: "The build has failed."
+                )
             }
         }
-    }
+
+
 }
