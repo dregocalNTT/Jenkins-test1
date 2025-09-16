@@ -1,3 +1,4 @@
+@Library("test") _
 pipeline {
     agent {  label 'java'     }
     environment {
@@ -13,6 +14,11 @@ pipeline {
         stage('Run JAR') {
             steps {
                 bat 'java -jar target/demo-1.0-SNAPSHOT.jar %TEXT%'
+            }
+        }
+        stage('Testing libraries'){
+            steps{
+                helloWorld()
             }
         }
     }
