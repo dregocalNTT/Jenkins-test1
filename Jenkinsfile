@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Testing libraries'){
             steps{
-                helloWorld()
+                helloWorldExternal(name: "Dani", dayOfWeek: "Monday")
             }
         }
     }
