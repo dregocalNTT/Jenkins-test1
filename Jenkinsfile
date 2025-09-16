@@ -21,5 +21,12 @@ pipeline {
                 helloWorldExternal(name: "Dani", dayOfWeek: "Monday")
             }
         }
+        stage('Send Notification'){
+            steps{
+                emailext(body: 'Test Message',
+                subject: 'Test Subject',
+                to: 'test@example.com')
+            }
+        }
     }
 }
