@@ -22,11 +22,10 @@ pipeline {
             }
         }
         stage('Main?'){
-            when {branch 'main'}
+            when { branch 'main' }
+            steps{ echo 'this is main'}
         }
-        steps{
-            echo 'this is main'
-        }
+        
     }
     post {
             success {
