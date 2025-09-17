@@ -21,6 +21,12 @@ pipeline {
                 helloWorldExternal(name: "Dani", dayOfWeek: "Monday")
             }
         }
+        stage('Main?'){
+            when {branch 'main'}
+        }
+        steps{
+            echo 'this is main'
+        }
     }
     post {
             success {
