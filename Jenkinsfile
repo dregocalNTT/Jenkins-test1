@@ -31,14 +31,14 @@ pipeline {
             success {
                 emailext(
                     to: 'danregcal@gmail.com',
-                    subject: "✅ Build Successful}",
+                    subject: "✅ ${env.JOB_NAME} ${env.BRANCH_NAME} Build Successful}",
                     body: "The build was successful!}"
                 )
             }
             failure {
                 emailext(
                     to: 'danregcal@gmail.com',
-                    subject: "❌ Build Failed",
+                    subject: "❌ ${env.JOB_NAME} ${env.BRANCH_NAME} Build Failed",
                     body: "The build has failed."
                 )
             }
